@@ -1,12 +1,14 @@
 require "gosu"
+require_relative "grid"
 
 class Game < Gosu::Window
 
-	WIDTH = 640
-	HEIGHT = 480
+	WIDTH = 736
+	HEIGHT = 384
 
 	def initialize 
 		super(WIDTH, HEIGHT)
+		@grid = Grid.new(0)
 	end
 
 	def update
@@ -14,7 +16,7 @@ class Game < Gosu::Window
 	end
 
 	def draw
-
+		@grid.draw
 	end
 
 end

@@ -9,8 +9,8 @@ class Button
 		@h = h
 		@image = Gosu::Image.new(image)
 		@crossed = crossed
-		@scalex = @w / 100
-		@scaley = @h / 100
+		@scalex = @w / 100.0
+		@scaley = @h / 100.0
 		@text = text
 		@textsize = textsize
 	end
@@ -21,8 +21,24 @@ class Button
 
 	def draw
 		font = Gosu::Font.new(@textsize)
-		@image.draw(@x, @y, 2, @scalex, @scaley)
-		font.draw(@text, @x + (@w / 2) - @textsize, @y + (@h / 2) - (@textsize / 2), 2, 1, 1, 0xff_000000)
+		@image.draw(@x, @y, 1, @scalex, @scaley)
+		font.draw(@text, @x + (@w / 2) - @textsize / 2, @y + (@h / 2) - (@textsize / 2), 2, 1, 1, 0xff_000000)
+	end
+
+	def getText
+		@text
+	end	
+
+	def getX
+		@x
+	end
+
+	def getY
+		@y
+	end
+
+	def getImage
+		@image
 	end
 
 end
